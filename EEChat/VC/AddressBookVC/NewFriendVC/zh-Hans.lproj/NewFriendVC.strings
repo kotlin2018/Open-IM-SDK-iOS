@@ -1,0 +1,9 @@
+
+/* Class = "UIButton"; normalTitle = "添加"; ObjectID = "NsZ-RK-K1L"; */
+"NsZ-RK-K1L.normalTitle" = "添加";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "TNl-u2-RRW"; */
+"TNl-u2-RRW.text" = "Name";
+
+/* Class = "UIViewController"; title = "New Friend"; ObjectID = "uAG-5W-351"; */
+"uAG-5W-351.title" = "新的朋友";

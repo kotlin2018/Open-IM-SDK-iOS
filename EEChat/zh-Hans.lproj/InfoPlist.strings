@@ -1,0 +1,17 @@
+/* 
+  InfoPlist.strings
+  EEChat
+
+  Created by Snow on 2021/5/27.
+  
+*/
+
+
+"NSContactsUsageDescription" = "若不允许，您将无法使用通讯录联系人等功能";
+"NSMicrophoneUsageDescription" = "若不允许，您将无法发送语音给朋友";
+
+"NSLocationAlwaysUsageDescription" = "若不允许，无法发送位置信息";
+"NSLocationWhenInUseUsageDescription" = "若不允许，无法发送位置信息";
+
+"NSCameraUsageDescription" = "若不允许，您将无法发送图片或视频给好友";
+"NSPhotoLibraryUsageDescription" = "若不允许，您将无法发送图片或视频给好友";

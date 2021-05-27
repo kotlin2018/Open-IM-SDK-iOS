@@ -1,0 +1,15 @@
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "7MX-Eb-Nmx"; */
+"7MX-Eb-Nmx.normalTitle" = "登录";
+
+/* Class = "UILabel"; text = "1."; ObjectID = "G1x-r9-wmN"; */
+"G1x-r9-wmN.text" = "1.";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Gne-6b-LEG"; */
+"Gne-6b-LEG.text" = "Label";
+
+/* Class = "UILabel"; text = "请选择相应助记词，确保顺序正确"; ObjectID = "blD-nu-WAz"; */
+"blD-nu-WAz.text" = "Please enter the mnemonic words in order";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ws6-1m-Qcb"; */
+"ws6-1m-Qcb.text" = "Label";

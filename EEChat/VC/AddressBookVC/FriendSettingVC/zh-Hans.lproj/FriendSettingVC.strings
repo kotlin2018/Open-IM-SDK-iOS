@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "清空聊天记录"; ObjectID = "3BN-mD-y4K"; */
+"3BN-mD-y4K.text" = "清空聊天记录";
+
+/* Class = "UILabel"; text = "设置备注"; ObjectID = "4Y3-hR-Qwo"; */
+"4Y3-hR-Qwo.text" = "设置备注";
+
+/* Class = "UILabel"; text = "查找聊天记录"; ObjectID = "7Ja-s9-3si"; */
+"7Ja-s9-3si.text" = "查找聊天记录";
+
+/* Class = "UILabel"; text = "加入黑名单"; ObjectID = "Fw8-T8-He0"; */
+"Fw8-T8-He0.text" = "加入黑名单";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "TUh-Ru-pMf"; */
+"TUh-Ru-pMf.text" = "Name";
+
+/* Class = "UIViewController"; title = "好友设置"; ObjectID = "Y6W-OH-hqX"; */
+"Y6W-OH-hqX.title" = "好友设置";
+
+/* Class = "UIButton"; normalTitle = "删除好友"; ObjectID = "fwK-1G-pfW"; */
+"fwK-1G-pfW.normalTitle" = "删除好友";
+
+/* Class = "UILabel"; text = "置顶联系人"; ObjectID = "inB-Zh-Z95"; */
+"inB-Zh-Z95.text" = "置顶联系人";

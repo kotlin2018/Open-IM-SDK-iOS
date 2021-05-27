@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ChatMediaHistoryCell" customModule="EEChat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QpG-ej-zOe">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F2D-n9-jqd" customClass="ImageView" customModule="EEChat" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mC8-2P-UOs">
+                                <rect key="frame" x="65" y="0.0" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mC8-2P-UOs" secondAttribute="height" multiplier="1:1" id="Gvc-4H-JhT"/>
+                                    <constraint firstAttribute="width" constant="35" id="ulG-Fd-yDY"/>
+                                </constraints>
+                                <state key="normal" image="icon_select_normal"/>
+                                <state key="selected" image="icon_select_seleted"/>
+                                <connections>
+                                    <action selector="selectAction" destination="gTV-IL-0wX" eventType="touchUpInside" id="JYt-h0-q88"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="F2D-n9-jqd" secondAttribute="trailing" id="Aqb-sR-Dqd"/>
+                            <constraint firstAttribute="trailing" secondItem="mC8-2P-UOs" secondAttribute="trailing" id="Lvs-Yz-3wD"/>
+                            <constraint firstItem="F2D-n9-jqd" firstAttribute="top" secondItem="QpG-ej-zOe" secondAttribute="top" id="Q2W-25-xXr"/>
+                            <constraint firstItem="mC8-2P-UOs" firstAttribute="top" secondItem="QpG-ej-zOe" secondAttribute="top" id="Qbk-N3-q7D"/>
+                            <constraint firstAttribute="bottom" secondItem="F2D-n9-jqd" secondAttribute="bottom" id="Y2F-tl-wJF"/>
+                            <constraint firstItem="F2D-n9-jqd" firstAttribute="leading" secondItem="QpG-ej-zOe" secondAttribute="leading" id="aAP-xr-gUS"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="eec_setBorderColor">
+                                <color key="value" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="QpG-ej-zOe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="XuY-Ud-Dgq"/>
+                <constraint firstAttribute="trailing" secondItem="QpG-ej-zOe" secondAttribute="trailing" id="gk7-cp-O4e"/>
+                <constraint firstItem="QpG-ej-zOe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="n4H-Nk-Gwh"/>
+                <constraint firstAttribute="bottom" secondItem="QpG-ej-zOe" secondAttribute="bottom" id="zd7-gH-9ap"/>
+            </constraints>
+            <connections>
+                <outlet property="imageView" destination="F2D-n9-jqd" id="Q1U-Kc-Rbc"/>
+                <outlet property="selectBtn" destination="mC8-2P-UOs" id="kmL-Cn-qeq"/>
+            </connections>
+            <point key="canvasLocation" x="35" y="93"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icon_select_normal" width="22" height="22"/>
+        <image name="icon_select_seleted" width="22" height="22"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

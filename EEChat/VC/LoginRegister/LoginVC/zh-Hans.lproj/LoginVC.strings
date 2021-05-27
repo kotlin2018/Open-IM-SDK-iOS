@@ -1,0 +1,18 @@
+
+/* Class = "UITextField"; placeholder = "输入您的助记词，并使用空格分隔"; ObjectID = "4DF-Q0-QE1"; */
+"4DF-Q0-QE1.placeholder" = "输入您的助记词，并使用空格分隔";
+
+/* Class = "UILabel"; text = "端到端加密，消息安全"; ObjectID = "71R-va-DMh"; */
+"71R-va-DMh.text" = "端到端加密，消息安全";
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "857-Oq-Pvf"; */
+"857-Oq-Pvf.normalTitle" = "登录";
+
+/* Class = "UIButton"; normalTitle = "注册新账号"; ObjectID = "BPk-9h-yin"; */
+"BPk-9h-yin.normalTitle" = "注册新账号";
+
+/* Class = "UILabel"; text = "助记词登录，身份匿名"; ObjectID = "IcC-Dt-r5K"; */
+"IcC-Dt-r5K.text" = "助记词登录，身份匿名";
+
+/* Class = "UILabel"; text = "数字货币地址聊天 EEchat"; ObjectID = "M6W-rl-hT9"; */
+"M6W-rl-hT9.text" = "数字货币地址聊天 EEchat";

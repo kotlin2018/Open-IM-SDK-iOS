@@ -1,0 +1,15 @@
+
+/* Class = "UITextField"; placeholder = "请输入账号"; ObjectID = "58r-9V-w2v"; */
+"58r-9V-w2v.placeholder" = "请输入账号";
+
+/* Class = "UIButton"; normalTitle = "取消"; ObjectID = "6R4-Ff-ZEJ"; */
+"6R4-Ff-ZEJ.normalTitle" = "取消";
+
+/* Class = "UILabel"; text = "该用户不存在"; ObjectID = "QD1-OR-QiP"; */
+"QD1-OR-QiP.text" = "该用户不存在";
+
+/* Class = "UILabel"; text = "搜索："; ObjectID = "ovh-Fi-sOE"; */
+"ovh-Fi-sOE.text" = "搜索：";
+
+/* Class = "UILabel"; text = "0x4ba30768990a32f58ad8b91efa185e144303f2e5"; ObjectID = "pcC-i8-2am"; */
+"pcC-i8-2am.text" = "0x4ba30768990a32f58ad8b91efa185e144303f2e5";

@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "title"; ObjectID = "4jB-Rp-0Bo"; */
+"4jB-Rp-0Bo.text" = "title";
+
+/* Class = "UILabel"; text = "Mnemonic words"; ObjectID = "6BT-ha-VjT"; */
+"6BT-ha-VjT.text" = "我的助记词";
+
+/* Class = "UILabel"; text = "Copy your mnemonic words："; ObjectID = "Bzj-pA-TTj"; */
+"Bzj-pA-TTj.text" = "复制您的助记词：";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "S52-Gi-V87"; */
+"S52-Gi-V87.normalTitle" = "下一步";

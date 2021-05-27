@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "搜索指定内容"; ObjectID = "9H5-Yb-eii"; */
+"9H5-Yb-eii.text" = "搜索指定内容";
+
+/* Class = "UILabel"; text = "没有找到“资料”相关结果"; ObjectID = "KcE-L8-VK2"; */
+"KcE-L8-VK2.text" = "没有找到“资料”相关结果";
+
+/* Class = "UIButton"; normalTitle = "文件"; ObjectID = "Vad-ek-sc8"; */
+"Vad-ek-sc8.normalTitle" = "文件";
+
+/* Class = "UILabel"; text = "Text"; ObjectID = "WJ9-Ck-HBI"; */
+"WJ9-Ck-HBI.text" = "Text";
+
+/* Class = "UIButton"; normalTitle = "取消"; ObjectID = "YeI-xx-Qel"; */
+"YeI-xx-Qel.normalTitle" = "取消";
+
+/* Class = "UIButton"; normalTitle = "视频"; ObjectID = "a7F-eN-3VQ"; */
+"a7F-eN-3VQ.normalTitle" = "视频";
+
+/* Class = "UILabel"; text = "2020/11/11"; ObjectID = "eL3-f6-jbU"; */
+"eL3-f6-jbU.text" = "2020/11/11";
+
+/* Class = "UIButton"; normalTitle = "图片"; ObjectID = "ixE-l7-ebF"; */
+"ixE-l7-ebF.normalTitle" = "图片";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "sIV-CP-nbT"; */
+"sIV-CP-nbT.text" = "Name";
+
+/* Class = "UITextField"; placeholder = "搜索"; ObjectID = "vIA-mh-Euy"; */
+"vIA-mh-Euy.placeholder" = "搜索";

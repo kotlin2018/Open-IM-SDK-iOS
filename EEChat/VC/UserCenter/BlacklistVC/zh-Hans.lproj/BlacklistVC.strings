@@ -1,0 +1,9 @@
+
+/* Class = "UIViewController"; title = "通讯录黑名单"; ObjectID = "GNi-mX-owY"; */
+"GNi-mX-owY.title" = "通讯录黑名单";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "Lmi-aH-TZB"; */
+"Lmi-aH-TZB.text" = "Name";
+
+/* Class = "UIButton"; normalTitle = "移除"; ObjectID = "QYN-sG-a3X"; */
+"QYN-sG-a3X.normalTitle" = "移除";

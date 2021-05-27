@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "我的账号：17643567890kkmy"; ObjectID = "5JW-2e-nA6"; */
+"5JW-2e-nA6.text" = "";
+
+/* Class = "UILabel"; text = "修改头像"; ObjectID = "7C5-ms-7Jd"; */
+"7C5-ms-7Jd.text" = "修改头像";
+
+/* Class = "UILabel"; text = "消息通知"; ObjectID = "7p2-eb-Qb3"; */
+"7p2-eb-Qb3.text" = "消息通知";
+
+/* Class = "UILabel"; text = "通讯录黑名单"; ObjectID = "FAf-xl-IR0"; */
+"FAf-xl-IR0.text" = "通讯录黑名单";
+
+/* Class = "UIButton"; normalTitle = "  退出登录"; ObjectID = "Qfp-Yo-RYF"; */
+"Qfp-Yo-RYF.normalTitle" = "  退出登录";
+
+/* Class = "UILabel"; text = "name"; ObjectID = "f2C-X9-N0d"; */
+"f2C-X9-N0d.text" = "";
+
+/* Class = "UILabel"; text = "修改昵称"; ObjectID = "jTS-PI-6Cv"; */
+"jTS-PI-6Cv.text" = "修改昵称";

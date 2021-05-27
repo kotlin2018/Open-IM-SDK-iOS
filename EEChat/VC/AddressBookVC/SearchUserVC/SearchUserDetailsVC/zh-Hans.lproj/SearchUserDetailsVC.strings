@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "B17-tL-xnx"; */
+"B17-tL-xnx.text" = "Name";
+
+/* Class = "UILabel"; text = "账号：1234567890wswddef"; ObjectID = "JTH-ip-uYN"; */
+"JTH-ip-uYN.text" = "账号：1234567890wswddef";
+
+/* Class = "UIButton"; normalTitle = " 发消息"; ObjectID = "Qso-QH-yIa"; */
+"Qso-QH-yIa.normalTitle" = " 发消息";
+
+/* Class = "UIViewController"; title = "用户详情"; ObjectID = "wMm-Gu-ZzD"; */
+"wMm-Gu-ZzD.title" = "用户详情";

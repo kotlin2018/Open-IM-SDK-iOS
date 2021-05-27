@@ -1,0 +1,16 @@
+/* 
+  InfoPlist.strings
+  EEChat
+
+  Created by Snow on 2021/5/27.
+  
+*/
+
+"NSContactsUsageDescription" = "If not allowed, you will not be able to use functions such as address book contacts";
+"NSMicrophoneUsageDescription" = "If not allowed, you will not be able to send voice to friends";
+
+"NSLocationAlwaysUsageDescription" = "If not allowed, location information cannot be sent";
+"NSLocationWhenInUseUsageDescription" = "If not allowed, location information cannot be sent";
+
+"NSCameraUsageDescription" = "If not allowed, you will not be able to send pictures or videos to friends";
+"NSPhotoLibraryUsageDescription" = "If not allowed, you will not be able to send pictures or videos to friends";

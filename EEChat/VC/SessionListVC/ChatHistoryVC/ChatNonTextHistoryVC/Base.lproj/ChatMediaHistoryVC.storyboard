@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xL0-kj-TlG">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Image-->
+        <scene sceneID="bIH-rp-4Zo">
+            <objects>
+                <viewController title="Image" id="xL0-kj-TlG" customClass="ChatMediaHistoryVC" customModule="EEChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VI1-Hh-5SK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ksn-Dm-lBr">
+                                <rect key="frame" x="0.0" y="44" width="414" height="768"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="KYI-AB-vDQ">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="stC-ga-AKM">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3hT-wS-lMx">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2a-Rh-wBa">
+                                                <rect key="frame" x="0.0" y="0.0" width="138" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="Forward">
+                                                    <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="forwardAction" destination="xL0-kj-TlG" eventType="touchUpInside" id="9fV-u1-KlD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kns-ZT-hV5">
+                                                <rect key="frame" x="138" y="0.0" width="138" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="Download">
+                                                    <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="downloadAction" destination="xL0-kj-TlG" eventType="touchUpInside" id="HQL-6i-i8i"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OuX-Yc-zFZ">
+                                                <rect key="frame" x="276" y="0.0" width="138" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="Delete">
+                                                    <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="deleteAction" destination="xL0-kj-TlG" eventType="touchUpInside" id="hlT-6k-Mbw"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="OuX-Yc-zFZ" firstAttribute="width" secondItem="g2a-Rh-wBa" secondAttribute="width" id="P26-nh-sx8"/>
+                                            <constraint firstItem="kns-ZT-hV5" firstAttribute="width" secondItem="g2a-Rh-wBa" secondAttribute="width" id="PVF-3L-lK6"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6vW-w9-Fdy"/>
+                                    <constraint firstAttribute="trailing" secondItem="3hT-wS-lMx" secondAttribute="trailing" id="ADl-Jk-lP7"/>
+                                    <constraint firstItem="3hT-wS-lMx" firstAttribute="leading" secondItem="stC-ga-AKM" secondAttribute="leading" id="CWT-Pc-oLp"/>
+                                    <constraint firstAttribute="bottom" secondItem="3hT-wS-lMx" secondAttribute="bottom" id="IBZ-ym-baT"/>
+                                    <constraint firstItem="3hT-wS-lMx" firstAttribute="top" secondItem="stC-ga-AKM" secondAttribute="top" id="OHA-Lv-4M8"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="eec_collapsibleConstraints" destination="6vW-w9-Fdy" collectionClass="NSMutableArray" id="m1Z-gZ-vKh"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Pzl-YW-QlV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Pzl-YW-QlV" firstAttribute="trailing" secondItem="stC-ga-AKM" secondAttribute="trailing" id="7Nt-Vy-DdY"/>
+                            <constraint firstItem="stC-ga-AKM" firstAttribute="leading" secondItem="Pzl-YW-QlV" secondAttribute="leading" id="8en-w4-XZN"/>
+                            <constraint firstItem="ksn-Dm-lBr" firstAttribute="top" secondItem="Pzl-YW-QlV" secondAttribute="top" id="Jjy-TE-n4E"/>
+                            <constraint firstItem="Pzl-YW-QlV" firstAttribute="trailing" secondItem="ksn-Dm-lBr" secondAttribute="trailing" id="Nfb-uC-0K1"/>
+                            <constraint firstItem="stC-ga-AKM" firstAttribute="top" secondItem="ksn-Dm-lBr" secondAttribute="bottom" id="QQV-rq-hGl"/>
+                            <constraint firstItem="ksn-Dm-lBr" firstAttribute="leading" secondItem="Pzl-YW-QlV" secondAttribute="leading" id="c3s-xq-vSk"/>
+                            <constraint firstItem="Pzl-YW-QlV" firstAttribute="bottom" secondItem="stC-ga-AKM" secondAttribute="bottom" id="dGP-Dg-jKj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomView" destination="stC-ga-AKM" id="oNz-Tk-yI0"/>
+                        <outlet property="collectionView" destination="ksn-Dm-lBr" id="8xg-4D-y4n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f2K-5g-m55" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-313.04347826086956" y="-212.27678571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

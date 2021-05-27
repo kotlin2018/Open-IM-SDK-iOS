@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "删除"; ObjectID = "OuX-Yc-zFZ"; */
+"OuX-Yc-zFZ.normalTitle" = "删除";
+
+/* Class = "UIButton"; normalTitle = "转发"; ObjectID = "g2a-Rh-wBa"; */
+"g2a-Rh-wBa.normalTitle" = "转发";
+
+/* Class = "UIButton"; normalTitle = "下载"; ObjectID = "kns-ZT-hV5"; */
+"kns-ZT-hV5.normalTitle" = "下载";
+
+/* Class = "UIViewController"; title = "图片"; ObjectID = "xL0-kj-TlG"; */
+"xL0-kj-TlG.title" = "图片";

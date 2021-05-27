@@ -1,0 +1,9 @@
+
+/* Class = "UIViewController"; title = "添加朋友"; ObjectID = "KSD-U2-4ts"; */
+"KSD-U2-4ts.title" = "添加朋友";
+
+/* Class = "UILabel"; text = "请输入账号"; ObjectID = "qnv-C8-fN1"; */
+"qnv-C8-fN1.text" = "请输入账号";
+
+/* Class = "UILabel"; text = "我的账号："; ObjectID = "wPh-jn-N4F"; */
+"wPh-jn-N4F.text" = "我的账号：";

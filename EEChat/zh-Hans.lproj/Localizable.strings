@@ -1,0 +1,95 @@
+/* 
+  Localizable.strings
+  EEChat
+
+  Created by Snow on 2021/5/26.
+  
+*/
+
+"Chats" = "Chats";
+"Contacts" = "通讯录";
+"Me" = "我的";
+
+"Account:" = "账号：";
+"The account has been copied!" = "账号已复制！";
+
+"Modify the nickname" = "修改昵称";
+
+"Please enter a nickname" = "请输入昵称";
+
+"Modify the success" = "修改成功";
+
+"Downloading..." = "下载中...";
+
+"Save success" = "保存成功";
+"Save failed" = "保存失败";
+
+"Yes" = "确定";
+"No" = "取消";
+
+"Are you sure to log out?" = "确定退出登录吗？";
+
+"Add" = "添加";
+
+"Rejected" = "已拒绝";
+"Agreed" = "已同意";
+
+"Cancel" = "取消";
+
+"Modify the remark" = "修改备注";
+"Please enter remarks" = "请输入备注";
+
+"Add blacklist successfully" = "添加黑名单成功";
+"Remove blacklist successfully" = "移除黑名单成功";
+
+"Clear the chat history?" = "清空聊天记录？";
+
+"Add friend" = "添加好友";
+
+"Sent friend request" = "已发送好友申请";
+
+"Remove friends?" = "移除好友？";
+
+"Recent Session" = "最近聊天";
+
+"Send to %@?" = "发送给 %@ ？";
+
+"Chat" = "聊天";
+
+"Search" = "搜索";
+
+"Select" = "选择";
+
+"\"%@\" not found" = "\"%@\"没有找到";
+
+"Select a maximum of %@ photos" = "你最多只能选择%@张照片";
+
+"This week" = "本周";
+"This month" = "本月";
+
+"Downloaded" = "已下载";
+
+"Delete" = "删除";
+"Delete?" = "删除？";
+
+"Please enter mnemonic words!" = "请输入助记词！";
+
+"Mnemonic word error." = "助记词错误";
+
+"Generating..." = "生成中...";
+
+"The order of the mnemonic words is incorrect!" = "助记词顺序不正确！";
+
+"Your mnemonic words" = "您的助记词";
+
+"The mnemonic phrase has been copied, please keep it in a safe place!" = "助记词已复制，快去安全的位置保存吧！";
+
+"Permission denied" = "没有权限";
+
+"Forward" = "转发";
+"Copy" = "复制";
+"Copied" = "已复制";
+
+"The recording time is too short" = "录音时间太短";
+
+"My account:" = "我的账号：";

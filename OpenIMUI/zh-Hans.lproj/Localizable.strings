@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  OpenIMUI
+
+  Created by Snow on 2021/5/27.
+  
+*/
+
+
+"[Image]" = "[图片]";
+"[Audio]" = "[语音]";
+"[Video]" = "[视频]";
+"[Unknown]" = "[请更新App后查看]";
+
+"Hold to Talk" = "按住 说话";
+"Swipe up cancel" = "上划取消";
+"Swipe down to send" = "下滑发送";
+"Release to send" = "松开 发送";
+"Release to cancel" = "松开 取消";
+
+"Camera" = "拍摄";
+"Album" = "相册";
+
+"Yesterday" = "昨天";

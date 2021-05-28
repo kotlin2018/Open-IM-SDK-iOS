@@ -48,6 +48,10 @@ open class MessagesVC: MessagesViewController {
         }
         
         OpenIMManager.shared.addListener(sessionType, listener: self)
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(deleteMessageNotification(_:)), name: OpenIMManager.deleteMessageNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deleteAllMessageNotification(_:)), name: OpenIMManager.deleteAllMessageNotification, object: nil)
     }
     
     open override func viewWillAppear(_ animated: Bool) {
@@ -58,13 +62,43 @@ open class MessagesVC: MessagesViewController {
     
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if let message = messages.last {
-            OpenIMManager.shared.updateSession(message)
-        }
+        OpenIMManager.shared.update(sessionType, message: messages.last)
     }
     
     deinit {
         OpenIMManager.shared.removeListener(sessionType, listener: self)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc
+    private func deleteMessageNotification(_ notification: Notification) {
+        guard let messages = notification.object as? [Message],
+              let sessionType = messages.first?.session,
+              sessionType == self.sessionType else {
+            return
+        }
+        
+        let sections = messages
+            .compactMap{ self.messages.firstIndex(of: $0) }
+            .sorted()
+            .reversed()
+            
+        messagesCollectionView.performBatchUpdates {
+            sections.forEach{ self.messages.remove(at: $0) }
+            messagesCollectionView.deleteSections(IndexSet(sections))
+        }
+        OpenIMManager.shared.update(sessionType, message: messages.last)
+    }
+    
+    @objc
+    private func deleteAllMessageNotification(_ notification: Notification) {
+        guard let sessionType = notification.object as? SessionType,
+              sessionType == self.sessionType else {
+            return
+        }
+        messages = []
+        messagesCollectionView.reloadData()
+        OpenIMManager.shared.update(sessionType, message: messages.last)
     }
     
     private func requestInfo() {
@@ -173,14 +207,6 @@ open class MessagesVC: MessagesViewController {
                 collectionView.performBatchUpdates {
                     self.messages.remove(at: indexPath.section)
                     collectionView.deleteSections(IndexSet([indexPath.section]))
-                }
-                
-                if indexPath.row == self.messages.count {
-                    if let message = self.messages.last {
-                        OpenIMManager.shared.updateSession(message)
-                    } else {
-                        OpenIMManager.shared.updateSession(message, isDelete: false)
-                    }
                 }
             }
         }

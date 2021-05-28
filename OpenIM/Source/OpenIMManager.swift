@@ -161,14 +161,14 @@ public class OpenIMManager {
         return Array(sessions.value)
     }
     
-    public func updateSession(_ message: Message, isDelete: Bool = false) {
-        if let session = sessions.value.first(where: { $0.session == message.session }) {
+    public func update(_ sessionType: SessionType, message: Message? = nil) {
+        if let session = sessions.value.first(where: { $0.session == sessionType }) {
             session.unread = 0
-            if isDelete {
-                session.text = ""
-            } else {
+            if let message = message {
                 session.date = message.sendTime
                 session.text = message.content.description
+            } else {
+                session.text = ""
             }
         }
     }

@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.documentation_url = 'https://github.com/OpenIMSDK/Open-IM-SDK-iOS'
   s.requires_arc = true
   
-  s.swift_versions = ['3.1', '3.2', '3.3', '3.4', '4.0', '4.1', '4.2', '4.3', '4.4', '5.0', '5.1']
+  s.swift_version = '5.3'
 
   # CocoaPods requires us to specify the root deployment targets
   # even though for us it is nonsense. Our root spec has no

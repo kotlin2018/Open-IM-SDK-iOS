@@ -67,7 +67,7 @@ extension PushManager: XGPushDelegate {
         
     }
     
-    // 前台接收到
+    // Receive
     func xgPushDidReceiveRemoteNotification(_ notification: Any, withCompletionHandler completionHandler: ((UInt) -> Void)? = nil) {
         switch notification {
         case let notification as UNNotification:
@@ -80,7 +80,7 @@ extension PushManager: XGPushDelegate {
         completionHandler?(options.rawValue)
     }
     
-    // 点击
+    // Click
     func xgPushDidReceiveNotificationResponse(_ response: Any, withCompletionHandler completionHandler: @escaping () -> Void) {
         switch response {
         case let response as UNNotificationResponse:
@@ -92,8 +92,8 @@ extension PushManager: XGPushDelegate {
     }
     
     private func handle(notification: UNNotification, isJump: Bool) {
-        if let sessionType = getParams(notification: notification) {
-            if isJump, AccountManager.shared.isLogin() {
+        if isJump, let sessionType = getParams(notification: notification) {
+            if AccountManager.shared.isLogin() {
                 DispatchQueue.main.async {
                     let navigationController = NavigationModule.shared.navigationControllers.first!
                     var viewControllers = navigationController.viewControllers

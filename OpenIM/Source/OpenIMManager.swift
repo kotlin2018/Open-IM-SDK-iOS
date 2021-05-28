@@ -161,7 +161,7 @@ public class OpenIMManager {
         return Array(sessions.value)
     }
     
-    public func update(message: Message, isDelete: Bool = false) {
+    public func updateSession(_ message: Message, isDelete: Bool = false) {
         if let session = sessions.value.first(where: { $0.session == message.session }) {
             session.unread = 0
             if isDelete {
@@ -249,8 +249,12 @@ public class OpenIMManager {
     
     // MARK: - Message
     
-    public func fetch(_ session: SessionType) -> [Message] {
-        return db?.fetch(session, count: 0, offset: "") ?? []
+    public func update(message: Message) {
+        db?.update(message: message)
+    }
+    
+    public func fetch(_ session: SessionType, count: Int = 50, offset msgID: String) -> [Message] {
+        return db?.fetch(session, count: count, offset: msgID) ?? []
     }
     
     public func fetch(_ sessionType: SessionType, type: ContentType.`Type`, key: String = "") -> [Message] {

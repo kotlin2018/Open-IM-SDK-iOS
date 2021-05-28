@@ -44,12 +44,15 @@ public struct SystemItem: Codable {
 public class Message: Codable, Hashable, FetchableRecord, PersistableRecord {
     
     public enum Status: UInt16, Codable, DatabaseValueConvertible {
-        case `init` = 0         // 初始
-        case received = 0x1001  // 接收到的消息
-        case uploading = 0x2001 // 上传文件
-        case failure = 0x2100   // 发送失败
-        case sending = 0x2101   // 发送消息
-        case sent = 0x2102      // 已发送消息
+        case `init` = 0x0000   
+        case uploading = 0x0001
+        case failure = 0x0100
+        case sending = 0x0101
+        case sent = 0x0102
+        
+        case received = 0x1000
+        case watched = 0x1001
+        case clicked = 0x1002
     }
     
     public var messageId = ""
@@ -80,6 +83,10 @@ public class Message: Codable, Hashable, FetchableRecord, PersistableRecord {
         return false
     }
     
+    public var isFromCurrentSender: Bool {
+        return status.rawValue < Status.received.rawValue
+    }
+    
     public init() {}
     
     private enum CodingKeys: String, CodingKey {
@@ -101,6 +108,10 @@ public class Message: Codable, Hashable, FetchableRecord, PersistableRecord {
         sendTime = try container.decode(TimeInterval.self, forKey: .sendTime)
         
         status = try container.decode(Status.self, forKey: .status)
+        
+        if status.rawValue < Status.sent.rawValue {
+            status = .failure
+        }
     }
     
     public func encode(to encoder: Encoder) throws {

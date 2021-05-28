@@ -1,6 +1,6 @@
 //
-//  EEChatUI.h
-//  EEChatUI
+//  OpenIMUI.h
+//  OpenIMUI
 //
 //  Created by Snow on 2021/5/11.
 //

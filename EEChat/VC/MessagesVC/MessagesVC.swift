@@ -26,6 +26,12 @@ open class MessagesVC: MessagesViewController {
     
     private(set) var sessionType = SessionType.p2p("")
     private(set) var messages: [MessageType] = []
+    
+    private(set) lazy var refreshControl: UIRefreshControl = {
+        let control = UIRefreshControl()
+        control.addTarget(self, action: #selector(loadMoreMessages), for: .valueChanged)
+        return control
+    }()
 
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +40,9 @@ open class MessagesVC: MessagesViewController {
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messageCellDelegate = self
+        messagesCollectionView.refreshControl = refreshControl
         
-        messages = OpenIMManager.shared.fetch(sessionType).filter{ $0.isDisplay }
+        self.messages = loadDBMessage()
         DispatchQueue.main.async {
             self.messagesCollectionView.scrollToLastItem(animated: false)
         }
@@ -52,7 +59,7 @@ open class MessagesVC: MessagesViewController {
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if let message = messages.last {
-            OpenIMManager.shared.update(message: message)
+            OpenIMManager.shared.updateSession(message)
         }
     }
     
@@ -86,6 +93,7 @@ open class MessagesVC: MessagesViewController {
     }
     
     private func insert(row: Int, messages: [Message], isScroll: Bool) {
+        let messages = preprocess(messages: messages)
         messagesCollectionView.performBatchUpdates {
             let sections = (0..<messages.count).map { row + $0 }
             self.messages.insert(contentsOf: messages, at: row)
@@ -101,6 +109,27 @@ open class MessagesVC: MessagesViewController {
         menuWindow.hide()
         let row = self.messages.count
         insert(row: row, messages: messages, isScroll: isScroll)
+    }
+    
+    private func preprocess(messages: [Message]) -> [Message] {
+        return messages.filter{ $0.isDisplay && !self.messages.contains($0) }
+    }
+    
+    private func loadDBMessage(count: Int = 50) -> [Message] {
+        let msgId = messages.first?.messageId ?? ""
+        let messages = OpenIMManager.shared.fetch(sessionType, count: count, offset: msgId)
+        if messages.count < count {
+            messagesCollectionView.refreshControl = nil
+        }
+        return preprocess(messages: messages)
+    }
+    
+    @objc
+    private func loadMoreMessages() {
+        let messages = loadDBMessage()
+        self.messages.insert(contentsOf: messages, at: 0)
+        self.messagesCollectionView.reloadDataAndKeepOffset()
+        self.refreshControl.endRefreshing()
     }
     
     private func updateBlock() -> (Message) -> Void {
@@ -148,9 +177,9 @@ open class MessagesVC: MessagesViewController {
                 
                 if indexPath.row == self.messages.count {
                     if let message = self.messages.last {
-                        OpenIMManager.shared.update(message: message)
+                        OpenIMManager.shared.updateSession(message)
                     } else {
-                        OpenIMManager.shared.update(message: message, isDelete: false)
+                        OpenIMManager.shared.updateSession(message, isDelete: false)
                     }
                 }
             }
@@ -318,10 +347,18 @@ extension MessagesVC: MessagesDisplayDelegate {
     
     public func configureAccessoryView(_ accessoryView: UIImageView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
         
-        let isShow = isFromCurrentSender(message: message) && message.status == .failure
-        accessoryView.isHidden = !isShow
-        if isShow {
-            accessoryView.image = ImageCache.named("openim_icon_send_error")
+        accessoryView.isHidden = true
+        if message.isFromCurrentSender {
+            if message.status == .failure {
+                accessoryView.isHidden = false
+                accessoryView.image = ImageCache.named("openim_icon_send_error")
+            }
+        } else {
+            if case ContentType.audio = message.content,
+               message.status != .clicked {
+                accessoryView.isHidden = false
+                accessoryView.image = ImageCache.named("openim_icon_voice_unclicked")
+            }
         }
     }
     
@@ -349,11 +386,15 @@ extension MessagesVC: MessageCellDelegate {
     }
     
     public func didTapAccessoryView(in cell: MessageCollectionViewCell) {
-        guard let indexPath = messagesCollectionView.indexPath(for: cell) else { return }
+        guard let indexPath = messagesCollectionView.indexPath(for: cell),
+            let message = messagesCollectionView.messagesDataSource?.messageForItem(at: indexPath, in: messagesCollectionView) else {
+                return
+        }
         
-        let message = messages[indexPath.section]
-        OpenIMManager.shared.send(message, callback: updateBlock())
-        messagesCollectionView.reloadItems(at: [indexPath])
+        if message.isFromCurrentSender {
+            OpenIMManager.shared.send(message, callback: updateBlock())
+            messagesCollectionView.reloadItems(at: [indexPath])
+        }
     }
     
     public func didTapImage(in cell: MessageCollectionViewCell) {
@@ -367,7 +408,7 @@ extension MessagesVC: MessageCellDelegate {
             if let url = item.url  {
                 PhotoModule.shared.showPhoto([url])
             }
-        case .video(let item):
+        case .video(_):
             break
         default:
             fatalError()
@@ -381,12 +422,16 @@ extension MessagesVC: MessageCellDelegate {
         }
         
         audioController.playOrStopSound(for: message, in: cell)
+        if message.status != .clicked {
+            message.status = .clicked
+            OpenIMManager.shared.update(message: message)
+            messagesCollectionView.reloadItems(at: [indexPath])
+        }
     }
 }
 
 extension MessagesVC: OpenIMHandleMessageDelegate {
     public func handleMessage(_ messages: [Message]) {
-        let array = messages.filter{ $0.isDisplay && !self.messages.contains($0) }
-        append(array)
+        append(messages)
     }
 }

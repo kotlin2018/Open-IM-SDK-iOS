@@ -1,6 +1,6 @@
 //
 //  MessageReusableView.swift
-//  EEChat
+//  OpenIMUI
 //
 //  Created by Snow on 2021/5/10.
 //

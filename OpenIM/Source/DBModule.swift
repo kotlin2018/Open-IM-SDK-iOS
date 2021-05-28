@@ -60,26 +60,31 @@ public class DBModule {
     // MARK: - Message
     
     public func fetch(_ sessionType: SessionType, count: Int, offset msgID: String) -> [Message] {
-        let messages = try! database.read({ db in
+        let messages = try! database.read({ db -> [Message] in
             return try! Message.fetchAll(
                 db,
                 sql:"""
                     SELECT * FROM \(Message.databaseTableName)
                     WHERE session = :session
-                    ORDER BY sendTime
+                    ORDER BY sendTime DESC
+                    LIMIT :count
+                    OFFSET (
+                        SELECT coalesce(MAX(rowNum), 0)
+                        FROM (
+                            SELECT messageId, ROW_NUMBER() OVER (ORDER BY sendTime DESC) AS rowNum
+                            FROM message
+                        ) AS rowTable
+                        WHERE messageId = :msgID
+                    )
                     """,
-                arguments: ["session": sessionType.description]
+                arguments: [
+                    "session": sessionType.description,
+                    "count": count,
+                    "msgID": msgID,
+                ]
             )
         })
-        messages.forEach { message in
-            switch message.status {
-            case .`init`, .received, .sent:
-                break
-            case .uploading, .failure, .sending:
-                message.status = .failure
-            }
-        }
-        return messages
+        return messages.reversed()
     }
     
     func fetch(_ sessionType: SessionType, type: ContentType.`Type`, key: String = "") -> [Message] {

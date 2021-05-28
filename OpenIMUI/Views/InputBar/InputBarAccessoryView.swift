@@ -1,6 +1,6 @@
 //
 //  InputBarAccessoryView.swift
-//  EEChatUI
+//  OpenIMUI
 //
 //  Created by Snow on 2021/5/21.
 //

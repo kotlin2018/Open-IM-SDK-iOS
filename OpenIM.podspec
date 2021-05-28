@@ -4,18 +4,18 @@ Pod::Spec.new do |s|
   s.version = '0.0.1'
 
   s.source = {
-    :git => "https://github.com/mxcl/#{s.name}.git",
+    :git => "https://github.com/OpenIMSDK/Open-IM-SDK-iOS.git",
     :tag => s.version,
     :submodules => true
   }
 
-  s.license = 'MIT'
-  s.summary = 'Promises for Swift & ObjC.'
-  s.homepage = 'http://mxcl.dev/PromiseKit/'
-  s.description = 'A thoughtful and complete implementation of promises for iOS, macOS, watchOS and tvOS with first-class support for both Objective-C and Swift.'
-  s.social_media_url = 'https://twitter.com/mxcl'
-  s.authors  = { 'Max Howell' => 'mxcl@me.com' }
-  s.documentation_url = 'http://mxcl.dev/PromiseKit/reference/v6/Classes/Promise.html'
+  s.license = 'Apache License 2.0'
+  s.summary = 'OpenIM SDK for Swift.'
+  s.homepage = 'https://github.com/OpenIMSDK/Open-IM-SDK-iOS'
+  s.description = 'OpenIM SDK for Swift.'
+  s.social_media_url = ''
+  s.authors  = { 'Snow' => 'jangsky215@gmail.com' }
+  s.documentation_url = 'https://github.com/OpenIMSDK/Open-IM-SDK-iOS'
   s.requires_arc = true
   
   s.swift_versions = ['3.1', '3.2', '3.3', '3.4', '4.0', '4.1', '4.2', '4.3', '4.4', '5.0', '5.1']

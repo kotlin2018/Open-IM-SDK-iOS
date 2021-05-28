@@ -17,15 +17,17 @@ public class OpenIMDateFormatter {
     
     public func format(_ interval: TimeInterval) -> String {
         let date = Date(timeIntervalSince1970: interval)
+        var prefix = ""
         if Calendar.current.isDateInToday(date) {
             formatter.dateFormat = "HH:mm"
         } else if Calendar.current.isDateInYesterday(date) {
-            formatter.dateFormat = LocalizedString("Yesterday")
+            prefix = LocalizedString("Yesterday") + " "
+            formatter.dateFormat = "HH:mm"
         } else {
             formatter.dateFormat = "YYYY/MM/dd"
         }
         
-        return formatter.string(from: date)
+        return prefix + formatter.string(from: date)
     }
     
 }
